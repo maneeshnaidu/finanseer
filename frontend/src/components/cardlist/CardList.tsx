@@ -1,10 +1,11 @@
 import React from 'react'
+import Card from '../card/Card';
 
 interface Props {}
 
 const CardList = (props: Props) => {
   return (
-    <div>CardList</div>
+    <Card companyName='Apple' ticker='AAPL' price={100}/>
   )
 }
 
