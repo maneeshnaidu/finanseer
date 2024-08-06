@@ -1,27 +1,19 @@
-import React, { ChangeEvent, SyntheticEvent, useState } from 'react';
-// import logo from './logo.svg';
-import './App.css';
-
-import CardList from './components/cardlist/CardList';
-import Search from './components/search/Search';
+import { Outlet } from "react-router";
+import Navbar from "./Components/Navbar/Navbar";
+import "react-toastify/dist/ReactToastify.css";
+import "./App.css";
+import { ToastContainer } from "react-toastify";
+import { UserProvider } from "./Context/useAuth";
 
 function App() {
-  const [search, setSearch] = useState<string>("");
-
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-        setSearch(e.target.value);
-        console.log(e);
-    };
-    
-    const onClick = (e: SyntheticEvent) => {
-        console.log(e);
-    };
-
   return (
-    <div className="App">
-      <Search onClick={onClick} search={search} handleChange={handleChange} />
-      <CardList />
-    </div>
+    <>
+      <UserProvider>
+        <Navbar />
+        <Outlet />
+        <ToastContainer />
+      </UserProvider>
+    </>
   );
 }
 
