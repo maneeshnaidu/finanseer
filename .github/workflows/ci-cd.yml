@@ -63,6 +63,6 @@ jobs:
     steps:
       - name: Deploy to Railway.app
         env:
-          RAILWAY_API_TOKEN: ${{ secrets.RENDER_API_TOKEN }}
+          RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
         run: |
-          render up
+          railway up
