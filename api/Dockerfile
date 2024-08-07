@@ -14,6 +14,6 @@ RUN dotnet publish -c Release -o out
 
 # Use the official ASP.NET Core runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
-WORKDIR /app
+WORKDIR /finanseer
 COPY --from=build /finanseer/api/out .
 ENTRYPOINT ["dotnet", "api.dll"]
