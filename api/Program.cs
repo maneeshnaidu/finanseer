@@ -65,6 +65,7 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
 })
 .AddEntityFrameworkStores<ApplicationDBContext>();
 
+
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme =
@@ -112,7 +113,7 @@ app.UseCors(x => x
      .AllowAnyMethod()
      .AllowAnyHeader()
      .AllowCredentials()
-      //.WithOrigins("https://localhost:44351))
+    //   .WithOrigins("https://localhost:44351"));
       .SetIsOriginAllowed(origin => true));
 
 app.UseAuthentication();
